@@ -1,0 +1,47 @@
+{
+  "id": "pipeline-web-api-main",
+  "name": "Web API Main Branch Pipeline",
+  "description": "Full CI/CD pipeline for the web API service, running on every push to main and pull request.",
+  "repository": "https://github.com/example-org/web-api",
+  "branch": "main",
+  "triggers": [
+    { "type": "push", "filter": "main" },
+    { "type": "pull-request", "filter": "*" }
+  ],
+  "stages": [
+    {
+      "name": "Build",
+      "steps": [
+        { "name": "Install Dependencies", "command": "npm ci" },
+        { "name": "Compile TypeScript", "command": "npm run build" }
+      ]
+    },
+    {
+      "name": "Test",
+      "steps": [
+        { "name": "Unit Tests", "command": "npm run test:unit" },
+        { "name": "Integration Tests", "command": "npm run test:integration" },
+        { "name": "Coverage Report", "command": "npm run test:coverage" }
+      ]
+    },
+    {
+      "name": "Quality",
+      "steps": [
+        { "name": "Lint", "command": "npm run lint" },
+        { "name": "Static Analysis", "command": "npm run sast" },
+        { "name": "Dependency Audit", "command": "npm audit --audit-level=high" }
+      ]
+    },
+    {
+      "name": "Deploy to Staging",
+      "steps": [
+        { "name": "Docker Build", "command": "docker build -t web-api:${GIT_SHA} ." },
+        { "name": "Push Image", "command": "docker push registry.example.com/web-api:${GIT_SHA}" },
+        { "name": "Deploy", "command": "kubectl set image deployment/web-api web-api=registry.example.com/web-api:${GIT_SHA}" }
+      ]
+    }
+  ],
+  "status": "succeeded",
+  "created": "2026-01-15T10:00:00Z",
+  "modified": "2026-05-02T08:45:00Z"
+}

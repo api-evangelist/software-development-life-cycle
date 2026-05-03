@@ -1,0 +1,74 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "sdlc": "https://api-evangelist.com/vocab/sdlc#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "WorkItem": "sdlc:WorkItem",
+    "Pipeline": "sdlc:Pipeline",
+    "Sprint": "sdlc:Sprint",
+    "Release": "sdlc:Release",
+    "TestSuite": "sdlc:TestSuite",
+
+    "id": "@id",
+    "type": "@type",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "created": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "modified": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+
+    "status": "sdlc:status",
+    "priority": "sdlc:priority",
+    "storyPoints": "sdlc:storyPoints",
+    "assignee": "sdlc:assignee",
+    "reporter": "sdlc:reporter",
+    "sprint": "sdlc:sprint",
+    "epic": "sdlc:epic",
+    "labels": "sdlc:labels",
+    "acceptanceCriteria": "sdlc:acceptanceCriteria",
+    "dueDate": {
+      "@id": "sdlc:dueDate",
+      "@type": "xsd:date"
+    },
+
+    "stages": "sdlc:stages",
+    "steps": "sdlc:steps",
+    "triggers": "sdlc:triggers",
+    "repository": {
+      "@id": "schema:codeRepository",
+      "@type": "@id"
+    },
+    "branch": "sdlc:branch",
+    "command": "sdlc:command",
+    "environment": "sdlc:environment",
+
+    "velocity": "sdlc:velocity",
+    "capacity": "sdlc:capacity",
+    "startDate": {
+      "@id": "sdlc:startDate",
+      "@type": "xsd:date"
+    },
+    "endDate": {
+      "@id": "sdlc:endDate",
+      "@type": "xsd:date"
+    },
+
+    "version": "schema:version",
+    "releaseNotes": "sdlc:releaseNotes",
+    "artifacts": "sdlc:artifacts",
+    "deployedEnvironments": "sdlc:deployedEnvironments",
+
+    "testResults": "sdlc:testResults",
+    "coverage": "sdlc:coverage",
+    "passRate": "sdlc:passRate",
+    "failedTests": "sdlc:failedTests"
+  }
+}

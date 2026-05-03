@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/software-development-life-cycle/work-item",
+  "title": "Work Item",
+  "description": "A unit of work tracked throughout the software development life cycle, such as a user story, task, bug, or epic.",
+  "type": "object",
+  "required": ["id", "type", "title", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the work item."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["epic", "story", "task", "bug", "spike", "subtask"],
+      "description": "The category of work item."
+    },
+    "title": {
+      "type": "string",
+      "description": "Short descriptive title of the work item."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the work to be done."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["backlog", "ready", "in-progress", "in-review", "done", "cancelled"],
+      "description": "Current workflow state of the work item."
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"],
+      "description": "Priority level indicating urgency and importance."
+    },
+    "storyPoints": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Effort estimate in story points using Fibonacci scale."
+    },
+    "assignee": {
+      "type": "string",
+      "description": "Username or identifier of the team member assigned to this work item."
+    },
+    "reporter": {
+      "type": "string",
+      "description": "Username or identifier of the person who created this work item."
+    },
+    "sprint": {
+      "type": "string",
+      "description": "Identifier of the sprint this work item is assigned to."
+    },
+    "epic": {
+      "type": "string",
+      "description": "Identifier of the parent epic if this is a story or task."
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Classification labels attached to this work item."
+    },
+    "acceptanceCriteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of conditions that must be met for this work item to be considered done."
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this work item was created."
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this work item was last updated."
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Target completion date for this work item."
+    }
+  },
+  "additionalProperties": false
+}

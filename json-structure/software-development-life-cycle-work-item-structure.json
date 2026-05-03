@@ -1,0 +1,22 @@
+{
+  "name": "Work Item",
+  "description": "A unit of work tracked throughout the software development life cycle.",
+  "fields": [
+    { "name": "id", "type": "string", "required": true, "description": "Unique identifier" },
+    { "name": "type", "type": "string", "required": true, "description": "Category: epic, story, task, bug, spike, subtask" },
+    { "name": "title", "type": "string", "required": true, "description": "Short descriptive title" },
+    { "name": "description", "type": "string", "required": false, "description": "Detailed description" },
+    { "name": "status", "type": "string", "required": true, "description": "Workflow state: backlog, ready, in-progress, in-review, done, cancelled" },
+    { "name": "priority", "type": "string", "required": false, "description": "Priority: critical, high, medium, low" },
+    { "name": "storyPoints", "type": "integer", "required": false, "description": "Effort estimate in story points" },
+    { "name": "assignee", "type": "string", "required": false, "description": "Assigned team member identifier" },
+    { "name": "reporter", "type": "string", "required": false, "description": "Creator identifier" },
+    { "name": "sprint", "type": "string", "required": false, "description": "Sprint identifier" },
+    { "name": "epic", "type": "string", "required": false, "description": "Parent epic identifier" },
+    { "name": "labels", "type": "array<string>", "required": false, "description": "Classification labels" },
+    { "name": "acceptanceCriteria", "type": "array<string>", "required": false, "description": "Done conditions" },
+    { "name": "created", "type": "datetime", "required": false, "description": "Creation timestamp" },
+    { "name": "updated", "type": "datetime", "required": false, "description": "Last update timestamp" },
+    { "name": "dueDate", "type": "date", "required": false, "description": "Target completion date" }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "PROJ-1234",
+  "type": "story",
+  "title": "As a developer, I want to trigger pipeline runs on pull requests so that code quality gates run before merge",
+  "description": "Add CI/CD pipeline trigger configuration that automatically runs all quality gates when a pull request is opened or updated against the main branch.",
+  "status": "in-progress",
+  "priority": "high",
+  "storyPoints": 5,
+  "assignee": "jsmith",
+  "reporter": "mwilliams",
+  "sprint": "sprint-2026-05",
+  "epic": "PROJ-1000",
+  "labels": ["ci-cd", "infrastructure", "automation"],
+  "acceptanceCriteria": [
+    "Pipeline runs automatically when a PR is opened",
+    "Pipeline runs automatically when new commits are pushed to an open PR",
+    "Build status is reported back to the PR as a status check",
+    "Merging is blocked if any pipeline stage fails"
+  ],
+  "created": "2026-04-28T09:00:00Z",
+  "updated": "2026-05-01T14:32:00Z",
+  "dueDate": "2026-05-15"
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/software-development-life-cycle/pipeline",
+  "title": "CI/CD Pipeline",
+  "description": "Represents a Continuous Integration and Delivery pipeline definition including stages, steps, triggers, and configuration.",
+  "type": "object",
+  "required": ["id", "name", "stages"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the pipeline."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the pipeline."
+    },
+    "description": {
+      "type": "string",
+      "description": "Purpose and scope of this pipeline."
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the source code repository this pipeline operates on."
+    },
+    "branch": {
+      "type": "string",
+      "description": "Target branch that triggers this pipeline by default.",
+      "default": "main"
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["push", "pull-request", "tag", "schedule", "manual"],
+            "description": "Event that triggers pipeline execution."
+          },
+          "filter": {
+            "type": "string",
+            "description": "Pattern filter applied to the trigger event."
+          }
+        }
+      },
+      "description": "Events that automatically trigger this pipeline."
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "steps"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the pipeline stage."
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "command"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Name of the step."
+                },
+                "command": {
+                  "type": "string",
+                  "description": "Command or action to execute."
+                },
+                "environment": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Environment variables for this step."
+                }
+              }
+            }
+          }
+        }
+      },
+      "description": "Ordered list of stages in the pipeline."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "running", "succeeded", "failed", "cancelled"],
+      "description": "Current execution status of the most recent pipeline run."
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the pipeline definition was created."
+    },
+    "modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the pipeline definition was last modified."
+    }
+  },
+  "additionalProperties": false
+}

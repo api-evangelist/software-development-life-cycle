@@ -1,0 +1,251 @@
+vocabulary:
+  name: Software Development Life Cycle Vocabulary
+  description: >-
+    Normative vocabulary and taxonomy for the Software Development Life Cycle (SDLC),
+    covering phases, methodologies, roles, artifacts, and quality dimensions used
+    in modern software engineering practices.
+  version: '1.0'
+  created: '2026-05-02'
+  modified: '2026-05-02'
+
+phases:
+  - term: Requirements Analysis
+    definition: >-
+      The process of identifying, documenting, and validating the needs and
+      constraints of stakeholders to produce a specification that the software
+      must fulfill.
+    aliases:
+      - Requirements Gathering
+      - Requirements Engineering
+    related:
+      - User Story
+      - Acceptance Criteria
+      - Use Case
+
+  - term: System Design
+    definition: >-
+      The process of defining the architecture, modules, interfaces, and data
+      flow to satisfy the specified requirements. Includes high-level and
+      low-level design.
+    aliases:
+      - Software Design
+      - Architecture Design
+    related:
+      - Architecture
+      - Design Pattern
+      - UML
+
+  - term: Implementation
+    definition: >-
+      The phase where developers write, review, and integrate source code
+      according to the design specification, following coding standards
+      and practices.
+    aliases:
+      - Coding
+      - Development
+    related:
+      - Source Control
+      - Code Review
+      - Pull Request
+
+  - term: Testing
+    definition: >-
+      The process of evaluating software to detect defects and verify that
+      it meets specified requirements. Includes unit, integration, system,
+      and acceptance testing.
+    aliases:
+      - Quality Assurance
+      - QA
+      - Verification
+    related:
+      - Unit Test
+      - Integration Test
+      - Test Automation
+
+  - term: Deployment
+    definition: >-
+      The process of releasing software to a production or end-user environment,
+      including release packaging, environment configuration, and rollout strategies.
+    aliases:
+      - Release
+      - Rollout
+      - Go-Live
+    related:
+      - CI/CD
+      - Blue-Green Deployment
+      - Canary Release
+
+  - term: Maintenance
+    definition: >-
+      Ongoing activities after deployment to correct defects, improve performance,
+      adapt to environmental changes, and add new capabilities while preserving
+      system integrity.
+    aliases:
+      - Operations
+      - Support
+    related:
+      - Bug Fix
+      - Patch
+      - Hotfix
+
+methodologies:
+  - term: Agile
+    definition: >-
+      An iterative and incremental approach to software development that emphasizes
+      collaboration, customer feedback, and small, rapid releases. Guided by the
+      Agile Manifesto principles.
+    related:
+      - Scrum
+      - Kanban
+      - Sprint
+
+  - term: Scrum
+    definition: >-
+      An agile framework for managing and completing complex projects using fixed-length
+      iterations called sprints, daily stand-ups, retrospectives, and dedicated roles
+      including Scrum Master and Product Owner.
+    related:
+      - Sprint
+      - Backlog
+      - Retrospective
+
+  - term: Kanban
+    definition: >-
+      A visual workflow management method for defining, managing, and improving
+      services that deliver knowledge work, using a board with columns representing
+      workflow stages.
+    related:
+      - Work In Progress
+      - WIP Limit
+      - Kanban Board
+
+  - term: Waterfall
+    definition: >-
+      A linear and sequential software development approach where each phase must
+      be completed before the next begins, with minimal iteration between phases.
+    related:
+      - Sequential Development
+      - Gantt Chart
+
+  - term: DevOps
+    definition: >-
+      A set of practices and cultural philosophies that combine software development
+      and IT operations to shorten the development life cycle and deliver features,
+      fixes, and updates frequently.
+    related:
+      - CI/CD
+      - Infrastructure as Code
+      - Site Reliability Engineering
+
+  - term: DevSecOps
+    definition: >-
+      An extension of DevOps that integrates security practices throughout the
+      software development life cycle rather than applying security only at the
+      end of the development process.
+    related:
+      - Static Analysis
+      - SAST
+      - DAST
+
+artifacts:
+  - term: User Story
+    definition: >-
+      A short, simple description of a feature told from the perspective of the
+      person who desires the new capability, typically following the format
+      "As a [role], I want [feature] so that [benefit]."
+    related:
+      - Acceptance Criteria
+      - Epic
+      - Backlog
+
+  - term: Sprint
+    definition: >-
+      A fixed time period (typically 1-4 weeks) during which a defined set of
+      work is completed and made ready for review in Scrum methodology.
+    related:
+      - Sprint Planning
+      - Sprint Review
+      - Sprint Retrospective
+
+  - term: Pull Request
+    definition: >-
+      A mechanism for submitting contributions to a codebase that allows for
+      peer review, discussion, and approval before merging into the main branch.
+    aliases:
+      - Merge Request
+      - Code Review
+    related:
+      - Branch
+      - Code Review
+      - Merge
+
+  - term: CI/CD Pipeline
+    definition: >-
+      An automated sequence of steps that code changes must pass through from
+      development to production, including build, test, and deployment stages.
+    aliases:
+      - Build Pipeline
+      - Deployment Pipeline
+    related:
+      - Continuous Integration
+      - Continuous Delivery
+      - Continuous Deployment
+
+  - term: Test Coverage
+    definition: >-
+      A metric measuring the degree to which source code is tested by automated
+      tests, typically expressed as a percentage of lines, branches, or functions
+      exercised by the test suite.
+    related:
+      - Unit Test
+      - Code Quality
+      - Technical Debt
+
+quality-dimensions:
+  - term: Code Quality
+    definition: >-
+      A measure of how well source code conforms to coding standards, design
+      principles, and best practices, typically assessed through static analysis,
+      code reviews, and quality metrics.
+    related:
+      - Technical Debt
+      - Code Smell
+      - Refactoring
+
+  - term: Technical Debt
+    definition: >-
+      The implied cost of additional rework caused by choosing an easy but
+      limited solution now instead of a better approach that would take longer.
+    related:
+      - Refactoring
+      - Code Quality
+      - Maintainability
+
+  - term: Velocity
+    definition: >-
+      An agile metric that measures the amount of work a team completes during
+      a sprint, used for planning future sprints and estimating project timelines.
+    related:
+      - Sprint
+      - Story Points
+      - Capacity Planning
+
+  - term: Mean Time to Recovery
+    definition: >-
+      The average time it takes to restore a service after an incident or
+      failure, a key reliability metric for production systems.
+    aliases:
+      - MTTR
+    related:
+      - Incident Response
+      - Reliability
+      - SLA
+
+  - term: Lead Time
+    definition: >-
+      The time elapsed from when a work item is created to when it is delivered
+      to the end user, encompassing all development, testing, and deployment stages.
+    related:
+      - Cycle Time
+      - Throughput
+      - Flow Metrics
