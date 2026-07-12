@@ -123,6 +123,10 @@ apis:
       - type: Documentation
         url: https://en.wikipedia.org/wiki/Software_release_life_cycle
 common:
+  - type: VulnerabilityDisclosure
+    url: security/software-development-life-cycle-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/software-development-life-cycle-domain-security.yml
   - url: https://en.wikipedia.org/wiki/Software_development_life_cycle
     name: SDLC Wikipedia Article
     type: Documentation
